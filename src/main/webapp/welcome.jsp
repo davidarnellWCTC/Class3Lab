@@ -17,14 +17,14 @@
         <p>
             <%
                 // Calls the responseMessage Object with the "responseMessage" key
-                Object responseObject = request.getAttribute("welcomeMessage");
+                Object genericMessageObject = request.getAttribute("welcomeMessage");
                 //Object errorObject = request.getAttribute("errorMessage");
                 
                 String welcomeTimeMessage = "unknown";
                 
-                if (responseObject != null){
+                if (genericMessageObject != null){
                     // sets the responseObject to a String to be displayed
-                    welcomeTimeMessage = responseObject.toString();
+                    welcomeTimeMessage = genericMessageObject.toString();
                 }
                 
                 out.println("<p style=\"color:blue; font-weight:bold;\">" + welcomeTimeMessage + "</p");
@@ -43,6 +43,24 @@
             
         </form>
         <p><a href="index.jsp">Back to Home</a></p>
+        
+        <p>
+            <%
+                // Calls the responseMessage Object with the "responseMessage" key
+                Object namedMessage = request.getAttribute("namedMessage");
+                //Object errorObject = request.getAttribute("errorMessage");
+                
+                String welcomeTimeMessage = "unknown";
+                
+                if (responseObject != null){
+                    // sets the responseObject to a String to be displayed
+                    namedMessage = responseObject.toString();
+                }
+                
+                out.println("<p style=\"color:blue; font-weight:bold;\">" + namedMessage + "</p");
+            %>
+                
+        </p>
         
     </body>
 </html>

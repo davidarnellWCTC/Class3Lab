@@ -5,6 +5,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -53,7 +54,11 @@ public class MessageGenerator extends HttpServlet {
         request.setAttribute("welcomeMessage", welcomeMessage);
         
         
+        // Sets the view for this HttpServletRequest request to the welcome.jsp page
+        RequestDispatcher view = request.getRequestDispatcher("/welcome.jsp");
         
+        // forwards the HttpServletRequest Object to the page with the ContentType set
+        view.forward(request, response);
         
         
     }
