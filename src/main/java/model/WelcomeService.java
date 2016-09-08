@@ -33,11 +33,11 @@ public class WelcomeService {
      */
     public String getMessage(){        
         if (0 < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < morning){
-            return messageMorning + ", the time is: " + dateFormat.format(time);
+            return messageMorning + ", the time is: " + dateFormat.format(time).toString();
         } else if ( morning < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < day){
-            return messageDay + ", the time is: " + dateFormat.format(time);
+            return messageDay + ", the time is: " + dateFormat.format(time).toString();
         } else {
-            return messageEvening + ", the time is: " + dateFormat.format(time);
+            return messageEvening + ", the time is: " + dateFormat.format(time).toString();
         }
     }
     

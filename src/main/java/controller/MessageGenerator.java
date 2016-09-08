@@ -39,8 +39,7 @@ public class MessageGenerator extends HttpServlet {
         // request → HttpServletRequest Object
         // getParameter → method to get a String parameter from a named thing in the request
         // name is the name of the String object that's being requested
-        // check to see if a name has been entered
-        
+        // check to see if a name has been entered        
         if (request.getParameter("name") != null){
             String name = request.getParameter("name");
             String namedMessage = welcomeService.getPersonalizedMessage(name);

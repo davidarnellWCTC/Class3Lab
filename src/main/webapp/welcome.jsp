@@ -51,14 +51,17 @@
                 Object namedMessageObject = request.getAttribute("namedMessage");
                 //Object errorObject = request.getAttribute("errorMessage");
                 
-                String namedMessage = "unknown";
+                String namedMessage = "null";
                 
                 if (namedMessageObject != null){
                     // sets the responseObject to a String to be displayed
                     namedMessage = namedMessageObject.toString();
+                    
+                    // will only display the personalized message if there is a namedMessageObject
+                    out.println("<p style=\"color:blue; font-weight:bold;\">" + namedMessage + "</p");
                 }
                 
-                out.println("<p style=\"color:blue; font-weight:bold;\">" + namedMessage + "</p");
+               
             %>  
         </p>
         
