@@ -31,7 +31,8 @@ public class WelcomeService {
      * The message returns the generic time, morning, day, evening, and displays the time
      * @return 
      */
-    public String getMessage(){        
+    public String getMessage(){      
+        // All this calculating should be in a separate private method
         if (0 < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < morning){
             return messageMorning + ", the time is: " + dateFormat.format(time).toString();
         } else if ( morning < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < day){
