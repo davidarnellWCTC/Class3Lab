@@ -20,7 +20,8 @@
                 Object genericMessageObject = request.getAttribute("welcomeMessage");
                 //Object errorObject = request.getAttribute("errorMessage");
                 
-                String welcomeTimeMessage = "unknown";
+                // sets a default value to the String welcomeTimeMessage if there is no message found
+                String welcomeTimeMessage = "null";
                 
                 if (genericMessageObject != null){
                     // sets the responseObject to a String to be displayed
@@ -42,25 +43,26 @@
             <input type="submit" name="submit" value="submit"/>
             
         </form>
-        <p><a href="index.jsp">Back to Home</a></p>
+        
         
         <p>
             <%
                 // Calls the responseMessage Object with the "responseMessage" key
-                Object namedMessage = request.getAttribute("namedMessage");
+                Object namedMessageObject = request.getAttribute("namedMessage");
                 //Object errorObject = request.getAttribute("errorMessage");
                 
-                String welcomeTimeMessage = "unknown";
+                String namedMessage = "unknown";
                 
-                if (responseObject != null){
+                if (namedMessageObject != null){
                     // sets the responseObject to a String to be displayed
-                    namedMessage = responseObject.toString();
+                    namedMessage = namedMessageObject.toString();
                 }
                 
                 out.println("<p style=\"color:blue; font-weight:bold;\">" + namedMessage + "</p");
-            %>
-                
+            %>  
         </p>
+        
+        <p><a href="index.jsp">Back to Home</a></p>
         
     </body>
 </html>

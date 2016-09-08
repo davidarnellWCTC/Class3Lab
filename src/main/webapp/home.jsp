@@ -35,7 +35,13 @@
         
         <p>Lab Activity #4</p>
         <p>Lab Activity #4 checks the current time and displays a message based on the result.</p>
-        
+        <p>The page for Activity 4 is available here.</p>
+        <form id="activity4Form" name="activity4Form" method="POST" action="time">
+            <!-- No input type as this form calls a servlet action with no data -->
+
+            <input type="submit" name="submit" value="Activity 4"/>
+
+        </form>
         
     
 </body>

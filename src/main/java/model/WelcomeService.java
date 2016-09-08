@@ -26,6 +26,11 @@ public class WelcomeService {
     private String messageDay = "Good day";
     private String messageEvening = "Good evening";
     
+    /**
+     * This method gets the generic time message
+     * The message returns the generic time, morning, day, evening, and displays the time
+     * @return 
+     */
     public String getMessage(){        
         if (0 < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < morning){
             return messageMorning + ", the time is: " + dateFormat.format(time);
@@ -36,6 +41,11 @@ public class WelcomeService {
         }
     }
     
+    /**
+     * This method returns a personalized message with the user's name
+     * @param name - String name entered in from a form
+     * @return 
+     */
     public String getPersonalizedMessage (String name){
         if (0 < time.get(Calendar.HOUR_OF_DAY) && time.get(Calendar.HOUR_OF_DAY) < morning){
             return messageMorning + ", " + name;
